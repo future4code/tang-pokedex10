@@ -1,11 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Pessoa 1: Luana Alencar
+- Pessoa 2: Maurilio Thiago
+- Pessoa 3: Tiago Sestari
 
-Link do Surge: www.link.com.br
+Link do Surge:
 
 O que funciona:
 - Item 1
