@@ -1,5 +1,6 @@
 import {Switch, Route, BrowserRouter } from 'react-router-dom';
-
+import React from 'react';
+import PokedexPage from '../Pages/PokedexPage';
 
 const Router = () => {
     return(
@@ -7,10 +8,10 @@ const Router = () => {
             <Switch>
 
                 <Route exact path="/">
-                    {/*Inserir aqui o componente da pokedex*/}
+                    <PokedexPage />
                 </Route>
                 <Route exact path="/pokedex">
-                    {/*Inserir aqui o componente da pokedex*/}
+                    <PokedexPage />
                 </Route>
                 <Route exact path="/listagem">
                     {/*Inserir aqui o componente da listagem de todos os 
@@ -29,3 +30,5 @@ const Router = () => {
         </BrowserRouter>
     )
 }
+
+export default Router;
