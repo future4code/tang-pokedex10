@@ -1,9 +1,9 @@
 import React from 'react';
 
 const CardPokedex = (props) => {
-    const {imagem, nome, tipo} = props;
+    const { imagem, nome, tipo } = props;
 
-    return(
+    return (
         <div>
             <div> {imagem}  </div>
             <div> Nome: {nome} </div>

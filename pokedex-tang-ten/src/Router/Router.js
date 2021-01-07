@@ -5,7 +5,7 @@ import PokeDetailsPage from '../Pages/PokeDetailsPage';
 import PokeListPage from '../Pages/PokeListPage';
 
 const Router = () => {
-    return(
+    return (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/">
@@ -19,14 +19,14 @@ const Router = () => {
                 <Route exact path="/listagem">
                     {/*Inserir aqui o componente da listagem de todos os 
                     pokemons*/}
-                    <PokeListPage/>
+                    <PokeListPage />
                 </Route>
 
                 <Route exact path="/detalhes/:id">
                     {/*Inserir aqui o componente de detalhes do pokemons
                     notar que vamos usar parametros aqui para dizer qual
                     pokemon abrir*/}
-                    <PokeDetailsPage/>
+                    <PokeDetailsPage />
                 </Route>
 
                 <Route>
