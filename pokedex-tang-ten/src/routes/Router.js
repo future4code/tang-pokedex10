@@ -1,31 +1,34 @@
-import {Switch, Route, BrowserRouter } from 'react-router-dom';
 import React from 'react';
-import PokedexPage from '../Pages/PokedexPage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import PokeDetailsPage from '../pages/PokeDetailsPage';
+import PokedexPage from '../pages/PokedexPage';
+import PokeListPage from '../pages/PokeListPage';
 
 const Router = () => {
-    return(
+    return (
         <BrowserRouter>
             <Switch>
-
                 <Route exact path="/">
-                    <PokedexPage />
+                    {/*Inserir aqui o componente da listagem de todos os 
+                    pokemons*/}
+                    <PokeListPage />
                 </Route>
+
                 <Route exact path="/pokedex">
                     <PokedexPage />
                 </Route>
-                <Route exact path="/listagem">
-                    {/*Inserir aqui o componente da listagem de todos os 
-                    pokemons*/}
-                </Route>
-                <Route exact path="/detalhes/:id">
+
+                <Route exact path="/pokemon/:name">
                     {/*Inserir aqui o componente de detalhes do pokemons
                     notar que vamos usar parametros aqui para dizer qual
                     pokemon abrir*/}
-                </Route>
-                <Route>
-                    {/*Inserir aqui a página de Erro 404*/}
+                    <PokeDetailsPage />
                 </Route>
 
+                <Route>
+                    {/*Inserir aqui a página de Erro 404*/}
+                    <div> Erro 404. Página não encontrada</div>
+                </Route>
             </Switch>
         </BrowserRouter>
     )

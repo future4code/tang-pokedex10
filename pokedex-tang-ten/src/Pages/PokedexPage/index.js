@@ -1,33 +1,33 @@
 import React from 'react';
-import {useState} from 'react';
-import CardPokedex from '../../Components/CardPokedex';
+import { useState } from 'react';
+import CardPokedex from '../../components/CardPokedex/index';
 
 const PokedexPage = () => {
 
     const exemploInicial = [
         {
-        nome: "Charmander",
-        tipo: "Fogo",
-        imagemURL: "URL da Imagem"
-    },
-    {
-        nome: "Squirtle",
-        tipo: "Água",
-        imagemURL: "URL da Imagem"
-    }
-]
+            nome: "Charmander",
+            tipo: "Fogo",
+            imagemURL: "URL da Imagem"
+        },
+        {
+            nome: "Squirtle",
+            tipo: "Água",
+            imagemURL: "URL da Imagem"
+        }
+    ]
 
     const [pokemonsSalvos, setPokemonsSalvos] = useState(exemploInicial);
-        
-    return(
+
+    return (
         <div>
             {pokemonsSalvos.map((pokemon) => {
                 return (
-                    <CardPokedex 
+                    <CardPokedex
                         imagem={pokemon.imagemURL}
                         nome={pokemon.nome}
                         tipo={pokemon.tipo}
-                        />
+                    />
                 )
             }
             )

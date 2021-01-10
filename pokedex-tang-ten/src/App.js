@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Router from './Router/Router';
+import GlobalState from './global/GlobalState';
+import Router from './routes/Router';
 
 function App() {
   return (
-    
-    <Router />
+    <GlobalState>
+      <Router />
+    </GlobalState>
   );
 }
 
