@@ -1,41 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { BASE_URL } from '../../Constants';
 import { Button, ButtonsContainer, Card, MainContainer, NavBar, PokemonContainer } from './styles'
-import axios from 'axios';
+import GlobalStateContext from '../../global/GlobalStateContext';
+
 
 const PokeListPage = () => {
-  const [pokemons, setPokemons] = useState([{}])
-
-  const getPokemonsList = () => {
-
-    axios.get(`${BASE_URL}/pokemon`)
-      .then((response) => {
-        setPokemons(response.data.results)
-        // console.log(response.data.results);
-      }).catch((error) => {
-        alert(error)
-      })
-  }
-
-  useEffect(() => {
-    getPokemonsList()
-  }, [])
+  const ObjectFromGlobalState = useContext(GlobalStateContext)
 
   return (
     <MainContainer>
       <NavBar>
-        <Link to={'/'}>
+        <Link to={'/pokedex'}>
           <Button >Ir para PokéDex</Button>
         </Link>
         <h1>Lista de pokémons</h1>
       </NavBar>
       <PokemonContainer>
-        {pokemons && pokemons.map((pokemon) => {
+        {ObjectFromGlobalState.data.pokemons.map((poke) => {
           return (
-            <Card key={pokemon.name}>
-              <p>{pokemon.url}</p>
-              <p>{pokemon.name}</p>
+            <Card key={poke.id} pokemon={poke}>
+              <img src={poke.sprites && poke.sprites.front_default} alt={poke.name} />
+              <p>{poke.name}</p>
               <ButtonsContainer>
                 <Button>Adicionar à pokédex</Button>
                 <Button>Ver detalhes</Button>
