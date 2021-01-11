@@ -6,6 +6,17 @@ import GlobalStateContext from '../../global/GlobalStateContext';
 
 const PokeListPage = () => {
   const ObjectFromGlobalState = useContext(GlobalStateContext)
+  
+  const AddToPokedex = (i) => {
+    
+    const pokemonAdd = ObjectFromGlobalState.data.pokemons.filter((pokemon) =>{
+
+      if (pokemon.id == i) {return true}
+
+    })
+
+    console.log(pokemonAdd)
+  }
 
   return (
     <MainContainer>
@@ -22,7 +33,7 @@ const PokeListPage = () => {
               <img src={poke.sprites && poke.sprites.front_default} alt={poke.name} />
               <p>{poke.name}</p>
               <ButtonsContainer>
-                <Button>Adicionar à pokédex</Button>
+                <Button onClick={() => {AddToPokedex(poke.id)}  }>Adicionar à pokédex</Button>
                 <Button>Ver detalhes</Button>
               </ButtonsContainer>
             </Card>
