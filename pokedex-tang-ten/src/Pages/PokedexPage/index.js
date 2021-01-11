@@ -1,33 +1,27 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import CardPokedex from '../../Components/CardPokedex/index';
+import GlobalStateContext from '../../global/GlobalStateContext';
+import PokedexWraper from './styles';
+import './styles_css.css';
 
 const PokedexPage = () => {
 
-    const exemploInicial = [
-        {
-            nome: "Charmander",
-            tipo: "Fogo",
-            imagemURL: "URL da Imagem"
-        },
-        {
-            nome: "Squirtle",
-            tipo: "Água",
-            imagemURL: "URL da Imagem"
-        }
-    ]
+    const ObjectFromGlobalState = useContext(GlobalStateContext)
 
-    const [pokemonsSalvos, setPokemonsSalvos] = useState(exemploInicial);
 
     return (
-        <div>
-            {pokemonsSalvos.map((pokemon) => {
+        <div className="fullpokedex">
+            {ObjectFromGlobalState.data.pokedex.map((pokemon) => {
                 return (
+                    <PokedexWraper>
                     <CardPokedex
-                        imagem={pokemon.imagemURL}
-                        nome={pokemon.nome}
-                        tipo={pokemon.tipo}
+                        key={pokemon[0].id}
+                        imagem={pokemon[0].sprites && pokemon[0].sprites.front_default}
+                        nome={pokemon[0].name}
+                        tipo={pokemon[0].types}
                     />
+                    </PokedexWraper>
                 )
             }
             )

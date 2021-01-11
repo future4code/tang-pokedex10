@@ -15,7 +15,11 @@ const PokeListPage = () => {
 
     })
 
-    console.log(pokemonAdd)
+    const newPokedex = [...ObjectFromGlobalState.data.pokedex, pokemonAdd]
+
+    ObjectFromGlobalState.data.setPokedex(newPokedex)
+    
+    console.log(newPokedex)
   }
 
   return (

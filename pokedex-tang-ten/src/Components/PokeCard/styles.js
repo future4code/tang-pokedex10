@@ -12,3 +12,5 @@ export const CardWrapper = styled.div`
   border-radius: 4px;
   /* border: 3px solid orange; */
 `
+
+export default CardWrapper
