@@ -14,7 +14,17 @@ const PokeListPage = () => {
     const pokemonAdd = ObjectFromGlobalState.data.pokemons.filter((pokemon) =>{
       if (pokemon.id == i) {return true}
     })
-    const newPokedex = [...ObjectFromGlobalState.data.pokedex, pokemonAdd]
+
+    /*Criando função para verificar duplicatas, vou somar um numero que deverá ser zero caso o pokemon não esteja na lista */
+    let checarDuplicatas = 0;
+    ObjectFromGlobalState.data.pokedex.map((pokemon) => {
+      if(pokemon[0].id == i) {
+        checarDuplicatas = checarDuplicatas + 1;
+      }
+    })
+    /*________________________________________________________________________________________________________________*/
+
+    const newPokedex = checarDuplicatas ? [...ObjectFromGlobalState.data.pokedex] : [...ObjectFromGlobalState.data.pokedex, pokemonAdd];
     ObjectFromGlobalState.data.setPokedex(newPokedex) 
     //console.log(newPokedex)
   }
