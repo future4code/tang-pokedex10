@@ -4,22 +4,19 @@ import { Button, ButtonsContainer, Card, MainContainer, NavBar, PokemonContainer
 import GlobalStateContext from '../../global/GlobalStateContext';
 
 
+
 const PokeListPage = () => {
   const ObjectFromGlobalState = useContext(GlobalStateContext)
   
+
+
   const AddToPokedex = (i) => {
-    
     const pokemonAdd = ObjectFromGlobalState.data.pokemons.filter((pokemon) =>{
-
       if (pokemon.id == i) {return true}
-
     })
-
     const newPokedex = [...ObjectFromGlobalState.data.pokedex, pokemonAdd]
-
-    ObjectFromGlobalState.data.setPokedex(newPokedex)
-    
-    console.log(newPokedex)
+    ObjectFromGlobalState.data.setPokedex(newPokedex) 
+    //console.log(newPokedex)
   }
 
   return (

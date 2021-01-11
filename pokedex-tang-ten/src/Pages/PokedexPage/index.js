@@ -20,6 +20,7 @@ const PokedexPage = () => {
                         imagem={pokemon[0].sprites && pokemon[0].sprites.front_default}
                         nome={pokemon[0].name}
                         tipo={pokemon[0].types}
+                        id={pokemon[0].id}
                     />
                     </PokedexWraper>
                 )
