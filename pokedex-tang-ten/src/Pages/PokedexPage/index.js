@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import CardPokedex from '../../components/CardPokedex/index';
+import CardPokedex from '../../Components/CardPokedex/index';
 
 const PokedexPage = () => {
 
