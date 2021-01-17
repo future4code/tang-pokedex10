@@ -6,4 +6,6 @@ const PokeDetailsPage = () => {
   )
 }
 
+//teste
+
 export default PokeDetailsPage
