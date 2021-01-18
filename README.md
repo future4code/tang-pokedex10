@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Pessoa 2: Maurilio Thiago
 - Pessoa 3: Tiago Sestari
 
-Link do Surge:
+Link do Surge: http://excited-division.surge.sh/
 
 O que funciona:
 - Item 1: Consumo da API externa e listagem dos pokemons
