@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Button, ButtonsContainer, Card, MainContainer, NavBar, PokemonContainer } from './styles'
 import GlobalStateContext from '../../global/GlobalStateContext';
 
@@ -7,7 +7,7 @@ import GlobalStateContext from '../../global/GlobalStateContext';
 
 const PokeListPage = () => {
   const ObjectFromGlobalState = useContext(GlobalStateContext)
-  
+  const history = useHistory();
 
 
   const AddToPokedex = (i) => {
@@ -26,8 +26,18 @@ const PokeListPage = () => {
 
     const newPokedex = checarDuplicatas ? [...ObjectFromGlobalState.data.pokedex] : [...ObjectFromGlobalState.data.pokedex, pokemonAdd];
     ObjectFromGlobalState.data.setPokedex(newPokedex) 
-    //console.log(newPokedex)
+    console.log(newPokedex)
   }
+
+
+  /*A partir daqui são as funções para as rotas de detalhes dos pokemons*/
+
+    const detalhar = (nome) => {
+      history.push("/pokemon/"+nome)
+      console.log('função ok')
+    }
+
+  /*____________________________________________________________________*/
 
   return (
     <MainContainer>
@@ -45,7 +55,7 @@ const PokeListPage = () => {
               <p>{poke.name}</p>
               <ButtonsContainer>
                 <Button onClick={() => {AddToPokedex(poke.id)}  }>Adicionar à pokédex</Button>
-                <Button>Ver detalhes</Button>
+                <Button onClick={() => {detalhar(poke.name)}}>Ver detalhes</Button>
               </ButtonsContainer>
             </Card>
           )
