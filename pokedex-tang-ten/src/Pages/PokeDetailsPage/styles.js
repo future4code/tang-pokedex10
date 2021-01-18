@@ -37,8 +37,8 @@ border-radius: 4px;
   export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  height: 308px;
+  text-align: left;
+  height: auto;
   width: 250px;
   background-color: #f1f1f1;
   margin: 4px;
@@ -49,9 +49,17 @@ border-radius: 4px;
 export const PokemonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
   margin: 4px;
   padding: 4px;
   /* border: 3px solid yellow; */
+`
+
+export const Picture = styled.div`
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+
 `
