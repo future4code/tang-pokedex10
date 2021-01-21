@@ -1,0 +1,14 @@
+.fullpokedex {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    margin: 1em 1em;
+}
+
+.pokemons {
+    display: flex;
+    flex-wrap: wrap;
+}
